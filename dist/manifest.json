@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Smart Tab Manager",
+    "version": "1.0.0",
+    "description": "Manage your tabs with ease.",
+    "icons": {
+        "16": "assets/icons/smartTab-16.png",
+        "34": "assets/icons/smartTab-34.png",
+        "48": "assets/icons/smartTab-48.png",
+        "128": "assets/icons/smartTab-128.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "tabs",
+        "storage"
+    ]
+}
