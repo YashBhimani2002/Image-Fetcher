@@ -6,14 +6,15 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: {
-        popup: path.resolve('./src/popup/index.jsx'),
-        background: path.resolve('./src/background/background.js')
+        background: path.resolve('./src/background/background.ts'),
+        content : path.resolve('./src/content/content.tsx'),
+        buttonComponent: path.resolve('./src/components/DownloadButton/button.tsx'),
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
-                use: 'babel-loader',
+                test: /\.tsx?$/,
+                use: 'ts-loader',
                 exclude: /node_modules/
             },
             {
@@ -50,10 +51,10 @@ module.exports = {
                 }
             ]
         }),
-        ...getHtmlPlugin(['popup','background'])
+        ...getHtmlPlugin(['background'])
     ],
     resolve: {
-        extensions: ['.js', '.jsx', '.json']
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     },
     optimization: {
         splitChunks: {
@@ -62,6 +63,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
+        path: path.resolve(__dirname, 'dist')
     }
 }
 

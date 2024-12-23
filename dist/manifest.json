@@ -4,19 +4,40 @@
     "version": "1.0.0",
     "description": "Manage your tabs with ease.",
     "icons": {
-        "16": "assets/icons/smartTab-16.png",
-        "34": "assets/icons/smartTab-34.png",
-        "48": "assets/icons/smartTab-48.png",
-        "128": "assets/icons/smartTab-128.png"
-    },
-    "action": {
-        "default_popup": "popup.html"
+        "16": "assets/icons/IF_icon_16.png",
+        "34": "assets/icons/IF_icon_34.png",
+        "48": "assets/icons/IF_icon_48.png",
+        "128": "assets/icons/IF_icon_128.png"
     },
     "background": {
         "service_worker": "background.js"
     },
     "permissions": [
         "tabs",
-        "storage"
-    ]
+        "storage",
+        "scripting",
+        "activeTab",
+        "tabs"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.flipkart.com/*",
+                "https://*.colorhunt.org/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "https://*.flipkart.com/*",
+        "https://*.colorhunt.org/*"
+    ],
+    "web_accessible_resources": [
+        {
+          "resources": ["buttonComponent.js"],
+          "matches": ["<all_urls>"]
+        }
+      ]
 }
