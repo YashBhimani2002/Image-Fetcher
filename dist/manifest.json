@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Smart Tab Manager",
+    "name": "Image Fetcher",
     "version": "1.0.0",
-    "description": "Manage your tabs with ease.",
+    "description": "Download any image form any website",
     "icons": {
         "16": "assets/icons/IF_icon_16.png",
         "34": "assets/icons/IF_icon_34.png",

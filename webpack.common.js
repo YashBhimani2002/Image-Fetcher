@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         background: path.resolve('./src/background/background.ts'),
         content : path.resolve('./src/content/content.tsx'),
-        buttonComponent: path.resolve('./src/components/DownloadButton/button.tsx'),
+        buttonComponent: path.resolve('./src/components/DownloadButton/index.tsx'),
     },
     module: {
         rules: [
